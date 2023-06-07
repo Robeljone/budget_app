@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Organization;
+use App\Models\OrganizationSocialMediaAccount;
+use App\Models\OrganizationSocialMediaAccountProprty;
 use App\Models\SocialMedia;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Response;
 use App\Models\LeaderType;
 use App\Models\UserProfile;
@@ -26,6 +30,18 @@ class AdminController extends Controller
             return Response::json( "someting went wrong", 400 );
         }
     }
+
+    public function account_detail($id)
+    {
+        $leaderTs = LeaderType::get();
+        $socailMT = SocialMedia::query()->where('status','=',1)->get();
+        $organization = Organization::query()->where('status','=',1)->get();
+        $user = User::query()->where('userRoll','=',1)->get();
+        $property = OrganizationSocialMediaAccountProprty::query()->where('organization_social_media_account_id','=',$id)->get();
+        $account = OrganizationSocialMediaAccount::query()->where('id','=',$id)->get();
+        return view('admin.organization_profile_detail', ['page' => 'Edit Social Media Account','script' => 'organization_detail.js','leaderTs' => $leaderTs,'socailMT' => $socailMT,'user'=>$user,'organization'=>$organization,'account'=>$account,'property' => $property]);
+    }
+
     public function leaders_profile(){
         $leaderTs = LeaderType::get();
         $socailMT = SocialMediaType::all();
@@ -72,7 +88,9 @@ class AdminController extends Controller
     {
         $leaderTs = LeaderType::get();
         $socailMT = SocialMedia::query()->where('status','=',1)->get();
+        $organization = Organization::query()->where('status','=',1)->get();
+        $organization_acccount = OrganizationSocialMediaAccount::query()->with(['orga_name','soc_media_type','soc_media_manager'])->get();
         $user = User::query()->where('userRoll','=',1)->get();
-        return view('admin.organization_profile', ['page' => 'Organization Social Media Profile','script' => 'organizationprofile.js','leaderTs' => $leaderTs,'socailMT' => $socailMT,'user'=>$user]);
+        return view('admin.organization_profile', ['page' => 'Organization Social Media Profile','script' => 'organizationprofile.js','leaderTs' => $leaderTs,'socailMT' => $socailMT,'user'=>$user,'organization'=>$organization,'organization_table'=>$organization_acccount]);
     }
 }

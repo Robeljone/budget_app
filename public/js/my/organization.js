@@ -10,9 +10,6 @@ $(document).ready(function () {
     var table = $("#example").DataTable({
         scrollX: true,
     });
-    $('#status').on('click', function() {
-        alert('test');
-    });
     $('#social_media_id').on('change', function() {
         $.ajax({
             type: "GET",
@@ -48,7 +45,7 @@ $(document).ready(function () {
         event.preventDefault();
         $.ajax({
             type: "POST",
-            url: "/add_account",
+            url: "/organization_new",
             data: $("#addnew").serialize(),
             beforeSend: function () {
                 $(".overl").removeClass("d-none");
@@ -141,7 +138,7 @@ $(document).ready(function () {
         event.preventDefault();
         $.ajax({
             type: "POST",
-            url: "/add_lead_social",
+            url: "/organization_new",
             data: $("#addsocialmid").serialize(),
             beforeSend: function () {
                 $(".overl").removeClass("d-none");

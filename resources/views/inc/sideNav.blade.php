@@ -58,6 +58,23 @@
             </li>
           </ul>
         </li>
+           <li class="nav-item @if($page == 'leader Profile' || $page == '') menu-open @endif">
+               <a href="#" class="nav-link @if($page == 'leader Profile' || $page == '') active @endif">
+                   <i class="nav-icon fas fa-rss"></i>
+                   <p>
+                       Post
+                       <i class="right fas fa-angle-left"></i>
+                   </p>
+               </a>
+               <ul class="nav nav-treeview">
+                   <li class="nav-item">
+                       <a href="/new_post" class="nav-link @if($page == 'Post') active @endif">
+                           <i class="fas fa-users nav-icon"></i>
+                           <p>New Post</p>
+                       </a>
+                   </li>
+               </ul>
+           </li>
          <li class="nav-item @if($page == 'leaders Type Setting') menu-open @endif">
            <a href="#" class="nav-link @if($page == 'leaders Type Setting') active @endif">
              <i class="nav-icon fas fa-cogs"></i>
@@ -90,6 +107,14 @@
                </a>
              </li>
            </ul>
+             <ul class="nav nav-treeview">
+                 <li class="nav-item">
+                     <a href="/organization" class="nav-link @if($page == 'Organization Setting') active @endif">
+                         <i class="fas fa-users-cog nav-icon"></i>
+                         <p>Organization</p>
+                     </a>
+                 </li>
+             </ul>
          </li>
 
        </ul>

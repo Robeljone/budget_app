@@ -14,11 +14,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="/plugins/fontawesome-free/css/all.min.css">
-  <!-- Theme style --> 
+  <!-- Theme style -->
   <link rel="stylesheet" href="/plugins/select2/css/select2.min.css">
   <link rel="stylesheet" href="/css/jquery.dataTables.min.css">
   <link rel="stylesheet" href="/css/adminlte.min.css">
   <link rel="icon" type="image/x-icon" href="/img/logo.png">
+    <link rel="stylesheet" href="/plugins/summernote/summernote-bs4.min.css">
+    <link rel="stylesheet" href="/plugins/codemirror/codemirror.css">
+    <link rel="stylesheet" href="/plugins/codemirror/theme/monokai.css">
+    <link rel="stylesheet" href="s/plugins/simplemde/simplemde.min.css">
 </head>
 <body class="layout-top-nav sidebar-mini sidebar-collapse">
 <div class="wrapper">
@@ -58,7 +62,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <a href="#" class="dropdown-item">
               <!-- Message Start -->
               <div class="media">
-                
+
                 <img src="/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
                 <div class="media-body">
                   <h3 class="dropdown-item-title">
@@ -140,7 +144,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <i class="far fa-user"></i>
           </a>
           <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-        
+
             <div class="dropdown-divider"></div>
             <a href="/myprofile" class="dropdown-item @if($page == 'My Profile') active @endif">
               <i class="far fa-user-circle mr-2"></i> My Profile</a>
