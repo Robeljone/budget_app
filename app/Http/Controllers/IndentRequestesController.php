@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class SocialMediaPropertyController extends Controller
+class IndentRequestesController extends Controller
 {
     //
 }

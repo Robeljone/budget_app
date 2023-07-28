@@ -11,12 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('profile_social_media', function (Blueprint $table) {
+        Schema::create('organizations', function (Blueprint $table) {
             $table->id();
-            $table->integer('pid')->unsigned();
-            $table->integer('smtid')->unsigned();
-            $table->string('link', 200);
-            $table->timestamp('added_on')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->string('organization_name');
+            $table->foreignId('cuid');
+            $table->foreignId('uuid')->nullable();
+            $table->string('status');
+            $table->timestamps();
         });
     }
 
@@ -25,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('profile_social_media');
+        Schema::dropIfExists('organizations');
     }
 };

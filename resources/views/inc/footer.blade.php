@@ -5,7 +5,7 @@
     Anything you want
   </div>
   <!-- Default to the left -->
-  <strong>Copyright &copy; 2023 <a href="/home">yekapp</a>.</strong> All rights reserved.
+  <strong>Copyright &copy; 2023 <a href="/home">PMS</a>.</strong> All rights reserved.
 </footer>
 </div>
 <!-- ./wrapper -->

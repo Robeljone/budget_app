@@ -11,14 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('organization_social_media_account_proprties', function (Blueprint $table) {
+        Schema::create('items_categorys', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('organization_social_media_account_id');
-            $table->string('parameter');
-            $table->string('value');
+            $table->string('category_name');
+            $table->foreignId('cuid');
+            $table->foreignId('uuid');
             $table->string('status');
-            $table->foreignId('cuid')->nullable();
-            $table->foreignId('uuid')->nullable();
             $table->timestamps();
         });
     }
@@ -28,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('organization_social_media_account_proprties');
+        Schema::dropIfExists('items_categorys');
     }
 };

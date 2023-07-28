@@ -11,12 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('new_posts', function (Blueprint $table) {
+        Schema::create('finacial_years', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('account_id');
-            $table->text('title');
-            $table->text('content');
-            $table->foreignId('posted_by');
+            $table->string('financial_year');
+            $table->date('start_date');
+            $table->date('end_date');
+            $table->foreignId('cuid');
+            $table->foreignId('uuid')->nullable();
             $table->string('status');
             $table->timestamps();
         });
@@ -27,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('new_posts');
+        Schema::dropIfExists('finacial_years');
     }
 };

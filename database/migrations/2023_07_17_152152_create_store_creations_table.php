@@ -11,12 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('dep_social_media', function (Blueprint $table) {
+        Schema::create('store_creations', function (Blueprint $table) {
             $table->id();
-            $table->integer('did')->unsigned();
-            $table->integer('smtid')->unsigned();
-            $table->string('link', 200);
-            $table->timestamp('added_on')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->string('store_name');
+            $table->string('short_code');
+            $table->foreignId('cuid');
+            $table->foreignId('uuid');
+            $table->string('status');
+            $table->timestamps();
         });
     }
 
@@ -25,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('dep_social_media');
+        Schema::dropIfExists('store_creations');
     }
 };

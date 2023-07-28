@@ -11,12 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('post_attachments', function (Blueprint $table) {
+        Schema::create('job_sections', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('post_id');
-            $table->string('path');
+            $table->foreignId('organization_id');
+            $table->string('allocated_budget');
+            $table->string('budget_code');
+            $table->string('job_section_name');
             $table->foreignId('cuid');
             $table->foreignId('uuid');
+            $table->string('status');
             $table->timestamps();
         });
     }
@@ -26,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('post_attachments');
+        Schema::dropIfExists('job_sections');
     }
 };

@@ -11,12 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('organization_social_media_accounts', function (Blueprint $table) {
+        Schema::create('budget_allocations', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('social_media_type');
-            $table->foreignId('organization');
-            $table->foreignId('social_media_manager');
-            $table->string('social_media_account_name');
+            $table->foreignId('financial_year');
+            $table->foreignId('organization_id');
+            $table->string('budget_amount');
+            $table->foreignId('cuid');
+            $table->foreignId('uuid');
             $table->string('status');
             $table->timestamps();
         });
@@ -27,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('organization_social_media_accounts');
+        Schema::dropIfExists('budget_allocations');
     }
 };

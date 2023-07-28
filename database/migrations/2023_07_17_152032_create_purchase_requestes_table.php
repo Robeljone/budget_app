@@ -11,12 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('social_media_properties', function (Blueprint $table) {
+        Schema::create('purchase_requestes', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('social_media_account_id');
-            $table->string('property_name');
-            $table->integer('status');
+            $table->string('refrence_number');
+            $table->foreignId('organization_id');
+            $table->foreignId('job_section_id');
+            $table->foreignId('item_code');
+            $table->string('quantity');
             $table->foreignId('cuid');
+            $table->foreignId('uuid');
+            $table->string('status');
             $table->timestamps();
         });
     }
@@ -26,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('social_media_properties');
+        Schema::dropIfExists('purchase_requestes');
     }
 };
