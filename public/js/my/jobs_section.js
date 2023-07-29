@@ -18,7 +18,7 @@ $(document).ready(function () {
             data: $("#addnew").serialize(),
             beforeSend: function () {
                 $(".overl").removeClass("d-none");
-            },
+            },a
             success: function (data) {
                 Swal.fire({
                     title: data,

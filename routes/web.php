@@ -7,6 +7,8 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\SocialMediaController;
 use App\Http\Controllers\OrganizationsController;
 use App\Http\Controllers\JobSectionsController;
+use App\Http\Controllers\BudgetAllocationsController;
+use App\Http\Controllers\FinacialYearsController;
 use App\Http\Controllers\NewPostController;
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +30,11 @@ Route::POST('/add_organization',[OrganizationsController::Class,'add_organizatio
 Route::POST('/edit_organization/{id}',[OrganizationsController::Class,'edit_organization'])->middleware('isLoggedIn');
 
 Route::get('/organizational_jobs',[JobSectionsController::Class,'index'])->middleware('isLoggedIn');
+Route::get('/financial_year',[FinacialYearsController::Class,'index'])->middleware('isLoggedIn');
+Route::get('/budget_allocation',[BudgetAllocationsController::Class,'index'])->middleware('isLoggedIn');
+Route::get('/user_management',[AdminController::Class,'user_management'])->middleware('isLoggedIn');
+Route::POST('/add_financial_year',[FinacialYearsController::Class,'save_financial_year'])->middleware('isLoggedIn');
+Route::POST('/add_budget_allocation',[BudgetAllocationsController::Class,'add_budget_allocation'])->middleware('isLoggedIn');
 Route::POST('/add_organization_jobs',[JobSectionsController::Class,'add_organization_jobs'])->middleware('isLoggedIn');
 Route::POST('/edit_organization_jobs/{id}',[JobSectionsController::Class,'edit_organization_jobs'])->middleware('isLoggedIn');
 

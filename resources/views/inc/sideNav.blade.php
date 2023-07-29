@@ -71,33 +71,17 @@
                </a>
                <ul class="nav nav-treeview">
                    <li class="nav-item">
-                       <a href="/leaders_type" class="nav-link @if($page == 'leaders Type Setting') active @endif">
+                       <a href="/financial_year" class="nav-link @if($page == 'Financial Year') active @endif">
                            <i class="fas fa-users-cog nav-icon"></i>
-                           <p>Finacial Year</p>
+                           <p>Financial Year</p>
                        </a>
                    </li>
                </ul>
                <ul class="nav nav-treeview">
                    <li class="nav-item">
-                       <a href="/organization" class="nav-link @if($page == 'Organization Setting') active @endif">
+                       <a href="/budget_allocation" class="nav-link @if($page == 'Budget Allocation') active @endif">
                            <i class="fas fa-users-cog nav-icon"></i>
-                           <p>Store Creation</p>
-                       </a>
-                   </li>
-               </ul>
-               <ul class="nav nav-treeview">
-                   <li class="nav-item">
-                       <a href="/organization" class="nav-link @if($page == 'Organization Setting') active @endif">
-                           <i class="fas fa-users-cog nav-icon"></i>
-                           <p>Item Category</p>
-                       </a>
-                   </li>
-               </ul>
-               <ul class="nav nav-treeview">
-                   <li class="nav-item">
-                       <a href="/organization" class="nav-link @if($page == 'Organization Setting') active @endif">
-                           <i class="fas fa-users-cog nav-icon"></i>
-                           <p>Expense Category</p>
+                           <p>Budget Allocation</p>
                        </a>
                    </li>
                </ul>
@@ -153,7 +137,7 @@
              </ul>
              <ul class="nav nav-treeview">
                  <li class="nav-item">
-                     <a href="/organization" class="nav-link @if($page == 'Organization Setting') active @endif">
+                     <a href="/user_management" class="nav-link @if($page == 'User Management') active @endif">
                          <i class="fas fa-users-cog nav-icon"></i>
                          <p>User Management</p>
                      </a>
