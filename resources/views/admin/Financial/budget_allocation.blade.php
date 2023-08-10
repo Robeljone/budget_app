@@ -58,6 +58,12 @@
                                             </select>
                                         </div>
                                     </div>
+                                    <div class="col-lg-3">
+                                        <div class="form-group">
+                                            <label>Budget Code</label>
+                                            <input type="text" class="form-control form-control-sm" placeholder="Budget Code" required='required' name="budget_code">
+                                        </div>
+                                    </div>
                                 </div>
                             </form>
 
@@ -77,6 +83,7 @@
                                         <th>NO</th>
                                         <th>Financial Year</th>
                                         <th>Organization</th>
+                                        <th>Budget Code</th>
                                         <th>Amount</th>
                                         <th>Action</th>
                                     </tr>
@@ -87,6 +94,7 @@
                                             <td>{{ $loop->index + 1 }}</td>
                                             <td>{{$row->financial->financial_year}}</td>
                                             <td>{{$row->organization->organization_name}}</td>
+                                            <td>{{$row->budget_code}}</td>
                                             <td>{{$row->budget_amount}}</td>
                                             <td>
                                                 <div class="btn-group">

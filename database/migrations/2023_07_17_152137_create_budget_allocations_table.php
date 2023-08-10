@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('financial_year');
             $table->foreignId('organization_id');
+            $table->string('budget_code');
             $table->string('budget_amount');
             $table->foreignId('cuid');
             $table->foreignId('uuid');

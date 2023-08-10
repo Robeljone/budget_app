@@ -19,7 +19,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="../../index2.html"><b>loign</b></a>
+    <a href="#"><b>Login</b></a>
   </div>
   <!-- /.login-logo -->
   <div class="card">
@@ -48,7 +48,7 @@
               <span class="fas fa-lock"></span>
             </div>
           </div>
-          
+
         </div>
         <div class="input-group mb-3">
          <span class="text-danger">@error('password') {{$message}}@enderror</span>

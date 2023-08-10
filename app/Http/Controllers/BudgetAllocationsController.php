@@ -42,6 +42,7 @@ class BudgetAllocationsController extends Controller
                    'financial_year'=>$request->f_year,
                    'budget_amount'=>$request->amount,
                    'organization_id'=>$request->organization,
+                   'budget_code'=>$request->budget_code,
                    'status'=>1,
                    'cuid'=>1,
                    'uuid'=>1

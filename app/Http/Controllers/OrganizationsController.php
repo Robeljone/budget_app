@@ -18,6 +18,7 @@ class OrganizationsController extends Controller
     {
         $newOrgannization = Organizations::query()->create([
             "organization_name"=>$request->name,
+            "woreda"=>$request->woreda,
             "status"=>1,
             "cuid"=>1,
         ]);

@@ -10,6 +10,8 @@ use App\Http\Controllers\JobSectionsController;
 use App\Http\Controllers\BudgetAllocationsController;
 use App\Http\Controllers\FinacialYearsController;
 use App\Http\Controllers\NewPostController;
+use App\Http\Controllers\PurchaseRequestesController;
+use App\Http\Controllers\IndentRequestesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,6 +28,8 @@ Route::get('/login',[AuthController::Class,'login'])->middleware('alreadyLoggedI
 Route::post('/login-user',[AuthController::Class,'loginUser'])->name('login-user');
 Route::get('/logout',[AuthController::Class,'logout']);
 Route::get('/organizational_setting',[OrganizationsController::Class,'index'])->middleware('isLoggedIn');
+Route::get('/purchase_request',[PurchaseRequestesController::Class,'index'])->middleware('isLoggedIn');
+Route::get('/indent_request',[IndentRequestesController::Class,'index'])->middleware('isLoggedIn');
 Route::POST('/add_organization',[OrganizationsController::Class,'add_organization'])->middleware('isLoggedIn');
 Route::POST('/edit_organization/{id}',[OrganizationsController::Class,'edit_organization'])->middleware('isLoggedIn');
 

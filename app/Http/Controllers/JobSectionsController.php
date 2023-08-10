@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\JobSections;
+use App\Models\Organizations;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
@@ -10,7 +11,8 @@ class JobSectionsController extends Controller
 {
     public function index(){
         $data = JobSections::query()->where('status','=',1)->get();
-        return view('admin.jobsection.index', ['page' => 'Job Section','data' => $data, 'script' => 'jobs_section.js']);
+        $organizations = Organizations::query()->where('status','=',1)->get();
+        return view('admin.jobsection.index', ['page' => 'Job Section','data' => $data,'organization' => $organizations, 'script' => 'jobs_section.js']);
     }
 
     public function add_organization(Request $request):JsonResponse

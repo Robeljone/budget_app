@@ -11,6 +11,7 @@ class Organizations extends Model
 
     protected $fillable = [
         "organization_name",
+        "woreda",
         "cuid",
         "status"
     ];

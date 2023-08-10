@@ -30,25 +30,22 @@
                                 <div class="row">
                                     <div class="col-lg-3">
                                         <div class="form-group">
-                                            <label>Organization</label>
+                                            <label>Job Category</label>
                                             <select class="form-control form-control-sm mselct" name="item" required='required'>
                                                 <option value="">_Select_</option>
-                                                @foreach($organization as $key)
-                                                    <option value={{$key->id}}}>{{$key->organization_name}}</option>
-                                                @endforeach
                                             </select>
                                         </div>
                                     </div>
                                     <div class="col-lg-3">
                                         <div class="form-group">
-                                            <label>Job Section Name</label>
-                                            <input type="text" class="form-control form-control-sm" placeholder="Job Section Name" required='required' name="name">
+                                            <label>Item</label>
+                                            <input type="text" class="form-control form-control-sm" placeholder="Item" required='required' name="name">
                                         </div>
                                     </div>
                                     <div class="col-lg-3">
                                         <div class="form-group">
-                                            <label>Allocated Budget</label>
-                                            <input type="number" class="form-control form-control-sm" placeholder="Allocated Budget" required='required' name="name">
+                                            <label>Quantity</label>
+                                            <input type="number" class="form-control form-control-sm" placeholder="Quantity" required='required' name="name">
                                         </div>
                                     </div>
                                     <div class="col-lg-1">

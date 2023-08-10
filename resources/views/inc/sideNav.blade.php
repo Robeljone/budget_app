@@ -46,7 +46,7 @@
                </ul>
                <ul class="nav nav-treeview">
                    <li class="nav-item">
-                       <a href="/leaders_type" class="nav-link @if($page == 'leaders Type Setting') active @endif">
+                       <a href="/purchase_request" class="nav-link @if($page == 'leaders Type Setting') active @endif">
                            <i class="fas fa-users-cog nav-icon"></i>
                            <p>Purchase Request</p>
                        </a>
@@ -54,7 +54,7 @@
                </ul>
                <ul class="nav nav-treeview">
                    <li class="nav-item">
-                       <a href="/organization" class="nav-link @if($page == 'Organization Setting') active @endif">
+                       <a href="/indent_request" class="nav-link @if($page == 'Organization Setting') active @endif">
                            <i class="fas fa-users-cog nav-icon"></i>
                            <p>Indent Request</p>
                        </a>
@@ -98,6 +98,22 @@
                    <li class="nav-item">
                        <a href="/leaders_type" class="nav-link @if($page == 'leaders Type Setting') active @endif">
                            <i class="fas fa-users-cog nav-icon"></i>
+                           <p>Indent management</p>
+                       </a>
+                   </li>
+               </ul>
+               <ul class="nav nav-treeview">
+                   <li class="nav-item">
+                       <a href="/leaders_type" class="nav-link @if($page == 'leaders Type Setting') active @endif">
+                           <i class="fas fa-users-cog nav-icon"></i>
+                           <p>Purchase management</p>
+                       </a>
+                   </li>
+               </ul>
+               <ul class="nav nav-treeview">
+                   <li class="nav-item">
+                       <a href="/leaders_type" class="nav-link @if($page == 'leaders Type Setting') active @endif">
+                           <i class="fas fa-users-cog nav-icon"></i>
                            <p>Item Creation</p>
                        </a>
                    </li>
@@ -107,6 +123,32 @@
                        <a href="/organization" class="nav-link @if($page == 'Organization Setting') active @endif">
                            <i class="fas fa-users-cog nav-icon"></i>
                            <p>Store Creation</p>
+                       </a>
+                   </li>
+               </ul>
+               <ul class="nav nav-treeview">
+                   <li class="nav-item">
+                       <a href="/organization" class="nav-link @if($page == 'Organization Setting') active @endif">
+                           <i class="fas fa-users-cog nav-icon"></i>
+                           <p>Item Category</p>
+                       </a>
+                   </li>
+               </ul>
+           </li>
+
+           <li class="nav-item @if($page == 'leaders Type Setting') menu-open @endif">
+               <a href="#" class="nav-link @if($page == 'leaders Type Setting') active @endif">
+                   <i class="nav-icon fas fa-store-slash"></i>
+                   <p>
+                       Exclude items
+                       <i class="right fas fa-angle-left"></i>
+                   </p>
+               </a>
+               <ul class="nav nav-treeview">
+                   <li class="nav-item">
+                       <a href="/leaders_type" class="nav-link @if($page == 'leaders Type Setting') active @endif">
+                           <i class="fas fa-users-cog nav-icon"></i>
+                           <p>Indent management</p>
                        </a>
                    </li>
                </ul>

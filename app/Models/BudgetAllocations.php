@@ -11,6 +11,7 @@ class BudgetAllocations extends Model
     protected $fillable =[
         'financial_year',
         'organization_id',
+        'budget_code',
         'budget_amount',
         'status',
         'cuid',
