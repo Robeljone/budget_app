@@ -10,6 +10,7 @@ use App\Models\User;
 use App\Models\UserProfile;
 use App\Models\ProfileSocialMedia;
 use App\Models\SocialMediaType;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Log;
 use SebastianBergmann\LinesOfCode\LinesOfCode;
 use Session;
@@ -41,6 +42,11 @@ class HomeController extends Controller
         }
 
 
+    }
+    public function language_set(Request $request,$locale){
+     App::setLocale($locale);
+     $request->session()->put('locale', $locale);
+     return redirect()->back();
     }
     public function changepass(){
         return view('home.pass', ['page' => 'Change Password']);

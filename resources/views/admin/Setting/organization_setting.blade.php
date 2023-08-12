@@ -34,27 +34,6 @@
                                             <input type="text" class="form-control form-control-sm" placeholder="Organization Name" required='required' name="name">
                                         </div>
                                     </div>
-                                    <div class="col-lg-3">
-                                        <div class="form-group">
-                                            <label>District</label>
-                                            <select class="form-control form-control-sm mselct" name="woreda" required='required'>
-                                                <option value="">_Select_</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="5">5</option>
-                                                <option value="6">6</option>
-                                                <option value="7">7</option>
-                                                <option value="8">8</option>
-                                                <option value="9">9</option>
-                                                <option value="10">10</option>
-                                                <option value="11">11</option>
-                                                <option value="12">12</option>
-                                                <option value="13">ልዩ ወረዳ</option>
-                                            </select>
-                                        </div>
-                                    </div>
                                     <div class="col-md-1">
                                         <div class="form-group">
                                             <label>&nbsp;&nbsp;</label>

@@ -81,4 +81,17 @@ $(document).ready(function() {
             },
         });
     });
+
+    $("#roleSelection").change(function()
+    {
+        if($('#roleSelection').val()=='102')
+        {
+            $("#organization_sele").removeClass('d-none')
+        }
+        else
+        {
+            $("#organization_sele").addClass('d-none')
+        }
+
+    });
 });

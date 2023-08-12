@@ -31,31 +31,36 @@
                                     <div class="col-lg-3">
                                         <div class="form-group">
                                             <label>Full Name</label>
-                                            <input type="text" class="form-control form-control-sm" placeholder="Organization Name" required='required' name="name">
+                                            <input type="text" class="form-control form-control-sm" placeholder="Full Name" required='required' name="name">
                                         </div>
-                                        <div class="form-group">
-                                            <label>Organization</label>
-                                            <input type="text" class="form-control form-control-sm" placeholder="Organization Name" required='required' name="name">
+                                        <div class="form-group d-none" id="organization_sele">
+                                            <label>Organization Name</label>
+                                            <select class="form-control form-control-sm mselct" name="organization" required>
+                                                @foreach($organizations as $key)
+                                                    <option value="{{$key->id}}"> {{$key->organization_name}}</option>
+                                                @endforeach
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <label>User Name</label>
-                                            <input type="text" class="form-control form-control-sm" placeholder="Organization Name" required='required' name="name">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Woreda</label>
-                                            <input type="text" class="form-control form-control-sm" placeholder="Organization Name" required='required' name="name">
+                                            <input type="text" class="form-control form-control-sm" placeholder="User Name" required='required' name="name">
                                         </div>
                                     </div>
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <label>Password</label>
-                                            <input type="text" class="form-control form-control-sm" placeholder="Organization Name" required='required' name="name">
+                                            <input type="text" class="form-control form-control-sm" placeholder="Password" required='required' name="name">
                                         </div>
+                                    </div>
+                                    <div class="col-lg-3">
                                         <div class="form-group">
-                                            <label></label>
-                                            <button type="submit" class="btn btn-block btn-sm btn-success">Save</button>
+                                            <label>Role</label>
+                                            <select class="form-control form-control-sm mselct" name="Role" id="roleSelection" required>
+                                                <option value="101">Finance Admin</option>
+                                                <option value="102">Organization Admin</option>
+                                            </select>
                                         </div>
                                     </div>
                                 </div>

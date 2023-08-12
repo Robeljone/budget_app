@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Symfony\Component\HttpFoundation\Response;
 
-class AlreadyLoggedIn
+class Localizationmiddleware
 {
     /**
      * Handle an incoming request.
@@ -16,9 +16,7 @@ class AlreadyLoggedIn
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(Session()->has('loginId') && url('login') == $request->url()){
-            return back();
-        }
+        App::setLocale('am');
         return $next($request);
     }
 }

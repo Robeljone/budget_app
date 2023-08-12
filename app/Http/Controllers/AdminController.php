@@ -18,7 +18,7 @@ class AdminController extends Controller
         $users = User::query()->get();
         $organizations = Organizations::query()->where('status','=',1)->get();
         return view('admin.setting.user_management',
-            ['page' => 'User Management','script' => 'user_management.js', 'users' => $users,]);
+            ['page' => 'User Management','script' => 'user_management.js', 'users' => $users,'organizations'=>$organizations]);
     }
     public function add_lead_type(Request $request){
         $newLeaderT = new LeaderType;

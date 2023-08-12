@@ -23,6 +23,7 @@ use App\Http\Controllers\IndentRequestesController;
 |
 */
 Route::get('/',[HomeController::Class,'home'])->middleware('isLoggedIn');
+Route::get('/change_language/{id}',[HomeController::Class,'language_set'])->middleware('isLoggedIn');
 Route::get('/home',[HomeController::Class,'home'])->middleware('isLoggedIn');
 Route::get('/login',[AuthController::Class,'login'])->middleware('alreadyLoggedIn');
 Route::post('/login-user',[AuthController::Class,'loginUser'])->name('login-user');
