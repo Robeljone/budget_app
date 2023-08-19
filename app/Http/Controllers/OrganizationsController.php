@@ -5,10 +5,14 @@ namespace App\Http\Controllers;
 use App\Models\Organizations;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Notifications\Notifiable;
+use App\Notifications\TelegramPushLink;
+use App\Notice;
 use Session;
 use Response;
 class OrganizationsController extends Controller
 {
+    use Notifiable;
     public function index(){
         $data = Organizations::query()->where('status','=',1)->get();
         return view('admin.setting.organization_setting', ['page' => 'Organizational Setting','data' => $data, 'script' => 'organization_setting.js']);
@@ -22,6 +26,7 @@ class OrganizationsController extends Controller
             "cuid"=>1,
         ]);
         if($newOrgannization->save()){
+            $this->notify(new TelegramPushLink());
             return Response::json( "Data Saved", 200 );
         }else{
             return Response::json( "someting went wrong", 400 );
