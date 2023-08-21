@@ -18,4 +18,9 @@ class JobSections extends Model
         'uuid',
         "status"
     ];
+
+    public function organ()
+    {
+        return $this->hasOne(Organizations::class,'id','organization_id');
+    }
 }

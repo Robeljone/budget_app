@@ -35,6 +35,7 @@ Route::POST('/add_organization',[OrganizationsController::Class,'add_organizatio
 Route::POST('/edit_organization/{id}',[OrganizationsController::Class,'edit_organization'])->middleware('isLoggedIn');
 
 Route::get('/organizational_jobs',[JobSectionsController::Class,'index'])->middleware('isLoggedIn');
+Route::POST('/create_job_section',[JobSectionsController::Class,'create_job_section'])->middleware('isLoggedIn');
 Route::get('/financial_year',[FinacialYearsController::Class,'index'])->middleware('isLoggedIn');
 Route::get('/budget_allocation',[BudgetAllocationsController::Class,'index'])->middleware('isLoggedIn');
 Route::get('/user_management',[AdminController::Class,'user_management'])->middleware('isLoggedIn');

@@ -7,7 +7,7 @@ $(document).ready(function() {
         event.preventDefault();
         $.ajax({
             type: "POST",
-            url: "/add_budget_allocation",
+            url: "/create_job_section",
             data: $('#addnew').serialize(),
             beforeSend: function () {
                 $(".overl").removeClass("d-none");

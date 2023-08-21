@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Organizations;
+use http\Url;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Notifications\Notifiable;
@@ -26,7 +27,8 @@ class OrganizationsController extends Controller
             "cuid"=>1,
         ]);
         if($newOrgannization->save()){
-            $this->notify(new TelegramPushLink());
+//            $this->notify(new TelegramPushLink());
+//            $result = redirect()->away('https://www.google.com');
             return Response::json( "Data Saved", 200 );
         }else{
             return Response::json( "someting went wrong", 400 );

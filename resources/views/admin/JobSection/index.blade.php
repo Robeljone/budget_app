@@ -31,10 +31,10 @@
                                     <div class="col-lg-3">
                                         <div class="form-group">
                                             <label>Organization</label>
-                                            <select class="form-control form-control-sm mselct" name="item" required='required'>
+                                            <select class="form-control form-control-sm mselct" name="orga" required='required'>
                                                 <option value="">_Select_</option>
                                                 @foreach($organization as $key)
-                                                    <option value={{$key->id}}}>{{$key->organization_name}}</option>
+                                                    <option value={{$key->id}}>{{$key->organization_name}}</option>
                                                 @endforeach
                                             </select>
                                         </div>
@@ -42,13 +42,13 @@
                                     <div class="col-lg-3">
                                         <div class="form-group">
                                             <label>Job Section Name</label>
-                                            <input type="text" class="form-control form-control-sm" placeholder="Job Section Name" required='required' name="name">
+                                            <input type="text" class="form-control form-control-sm" placeholder="Job Section Name" required='required' name="job">
                                         </div>
                                     </div>
                                     <div class="col-lg-3">
                                         <div class="form-group">
                                             <label>Allocated Budget</label>
-                                            <input type="number" class="form-control form-control-sm" placeholder="Allocated Budget" required='required' name="name">
+                                            <input type="number" class="form-control form-control-sm" placeholder="Allocated Budget" min="1" required='required' name="budget">
                                         </div>
                                     </div>
                                     <div class="col-lg-1">
@@ -75,8 +75,8 @@
                                     <tr>
                                         <th>NO</th>
                                         <th>Name</th>
-                                        <th>Edit</th>
-                                        <th>Status</th>
+                                        <th>Organization</th>
+                                        <th>Budget Code</th>
                                         <th>Action</th>
                                     </tr>
                                     </thead>
@@ -84,28 +84,10 @@
                                     @foreach ($data as $row)
                                         <tr>
                                             <td>{{ $loop->index + 1 }}</td>
-                                            <td>{{$row->organization_name}}</td>
-                                            <td>{{$row->organization_name}}</td>
-                                            @if($row->status =='1')
-                                                <td><button type="button" class="btn btn-success" style="pointer-events: none;">Active</button></td>
-                                            @else
-                                                <td><button type="button" class="btn btn-danger" style="pointer-events: none;">passive</button></td>
-                                            @endif
-                                            <td>
-                                                <div class="btn-group">
-                                                    <button type="button" class="btn btn-info">Action</button>
-                                                    <button type="button" class="btn btn-info dropdown-toggle dropdown-icon" data-toggle="dropdown">
-                                                        <span class="sr-only">Toggle Dropdown</span>
-                                                    </button>
-                                                    <div class="dropdown-menu" role="menu">
-                                                        @if($row->status =='1')
-                                                            <a class="dropdown-item" href="#">Deactivate</a>
-                                                        @else
-                                                            <a class="dropdown-item" href="#">Activate</a>
-                                                        @endif
-                                                    </div>
-                                                </div>
-                                            </td>
+                                            <td>{{$row->job_section_name}}</td>
+                                            <td>{{$row->organ->organization_name}}</td>
+                                            <td>{{$row->budget_code}}</td>
+                                            <td>{{$row->budget_code}}</td>
                                         </tr>
                                     @endforeach
                                     </tbody>
